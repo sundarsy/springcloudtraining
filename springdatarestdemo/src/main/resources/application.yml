@@ -1,0 +1,35 @@
+server:
+  port: 8095
+
+logging:
+  level:
+    com.nationstar: DEBUG
+
+endpoints:
+  shutdown:
+    enabled: true
+    sensitive: false
+
+eureka:
+  client:
+    healthcheck:
+      enabled: true
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+
+info:
+  component: Spring Data Rest Service
+
+spring:
+  datasource:
+    url: jdbc:h2:file:~/h2/app_db;DB_CLOSE_ON_EXIT=FALSE
+    username: test
+    password: test
+    driverClassName: org.h2.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+  h2:
+    console:
+      enabled: true
+    path: /h2-console
