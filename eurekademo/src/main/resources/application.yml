@@ -1,0 +1,23 @@
+server:
+  port: 8761
+
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    registerWithEureka: false
+    fetchRegistry: false
+    serviceUrl:
+      defaultZone: http://${eureka.instance.hostname}:8761/eureka/
+
+logging:
+  level:
+    ROOT: WARN
+
+endpoints:
+  shutdown:
+    enabled: true
+    sensitive: false
+
+info:
+  component: Discovery Service
